@@ -1,0 +1,52 @@
+# These files are text and should be normalized (convert crlf => lf)
+*.c                      text
+*.check                  text
+*.classpath              text
+*.clj                    text
+*.config                 text
+*.css                    text
+*.html                   text
+*.java                   text
+*.js                     text
+*.json                   text
+*.ldif                   text
+*.project                text
+*.properties             text
+*.sbt                    text
+*.scala                  text
+*.sh                     text
+*.sql                    text
+*.strings                text
+*.txt                    text
+*.version                text
+*.wsdl                   text
+*.wt                     text
+*.xml                    text
+*.xsd                    text
+
+# Windows-specific files get windows endings
+*.bat                   eol=crlf
+*.cmd                   eol=crlf
+*-windows.tmpl          eol=crlf
+
+# Visual Studio
+*.cs                    eol=crlf
+*.sln                   binary
+*.csproj                binary
+*.resx                  binary
+*.pdb                   binary
+*.svcmap                binary
+*.svcinfo               binary
+*.datasource            binary
+
+
+# Some binary file types for completeness
+# (binary is a macro for -text -diff)
+*.exe                   binary
+*.dll                   binary
+*.gif                   binary
+*.jpg                   binary
+*.png                   binary
+*.class                 -text diff=class
+*.jar                   -text diff=jar
+*.zip                   binary
