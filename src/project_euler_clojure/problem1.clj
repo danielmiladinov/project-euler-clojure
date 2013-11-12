@@ -8,10 +8,13 @@
       (fn [x] (= 0 (mod num x)))
       divisors)))
 
-(reduce
-  +
-  (filter
-    (fn [x]
-      (divisible? x 3 5))
-    (range 1 1000)))
+(defn solution
+  [upper-limit]
+  (reduce
+    +
+    (filter
+      (fn [x]
+        (divisible? x 3 5))
+      (range 1 upper-limit))))
 
+(solution 1000)
