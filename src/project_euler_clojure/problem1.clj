@@ -3,9 +3,10 @@
 (defn divisible?
   [num & divisors]
   (reduce
-    (fn [a b] (or a b)) ; can't take the value of a macro (or) so use a function or
+    ; can't take the value of a macro (or) so use a functional or
+    #(or %1 %2)
     (map
-      (fn [x] (= 0 (mod num x)))
+      #(= 0 (mod num %))
       divisors)))
 
 (defn solution
@@ -13,8 +14,7 @@
   (reduce
     +
     (filter
-      (fn [x]
-        (divisible? x 3 5))
+      #(divisible? % 3 5)
       (range 1 upper-limit))))
 
 (solution 1000)
