@@ -1,4 +1,4 @@
-# project_euler_clojure
+# project-euler-clojure
 
 A Clojure library designed to document my solutions to the [Project Euler][1] problems.
 
