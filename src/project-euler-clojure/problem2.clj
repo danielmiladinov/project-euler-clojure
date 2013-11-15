@@ -7,18 +7,10 @@
 ; find the sum of the even-valued terms.
 
 (defn fib [n]
-  (loop [countdown n terms []]
-    (cond
-      (= countdown 0) terms
-      :else
-      (recur
-        (dec countdown)
-        (conj terms
-          (cond
-            (= (count terms) 0) 1
-            (= (count terms) 1) 2
-            :else
-            (apply + (subvec terms (- (count terms) 2) (count terms)))))))))
+  (into []
+    (map first
+      (take n
+        (iterate (fn [[a b]] [b (+ a b)]) [1 2])))))
 
 (defn nth-fib [n] (last (fib n)))
 
