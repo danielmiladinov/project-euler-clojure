@@ -6,20 +6,10 @@
 ; By considering the terms in the Fibonacci sequence whose values do not exceed four million,
 ; find the sum of the even-valued terms.
 
-(defn fib [n]
-  (into []
-    (map first
-      (take n
-        (iterate (fn [[a b]] [b (+ a b)]) [1 2])))))
-
-(defn nth-fib [n] (last (fib n)))
-
 (defn fibs-less-than [n]
-  (loop [counter 1 terms []]
-    (let [next-fib (nth-fib counter)]
-      (cond
-        (>= next-fib n) terms
-        :else (recur (inc counter) (conj terms next-fib))))))
+  (take-while #(< % n)
+    (map first
+      (iterate (fn [[a b]] [b (+ a b)]) [1 2]))))
 
 (defn solution [n]
   (apply + (filter even? (fibs-less-than n))))
