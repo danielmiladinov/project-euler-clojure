@@ -28,3 +28,5 @@
 
 (defn solution [n]
   (apply max (prime-factors n)))
+
+(solution 600851475143)
