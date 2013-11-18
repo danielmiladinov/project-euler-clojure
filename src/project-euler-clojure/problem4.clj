@@ -1,12 +1,12 @@
 (ns project-euler-clojure.problem4
-  (require '[clojure.string :as s]))
+  (require '[clojure.string :as str]))
 
 ; A palindromic number reads the same both ways. The largest palindrome made from the product
 ; of two 2-digit numbers is 9009 = 91 × 99.
 ; Find the largest palindrome made from the product of two 3-digit numbers.
 
 (defn palindrome? [s]
-  (= (s/reverse s) s))
+  (= (str/reverse s) s))
 
 (defn product-range [start stop]
   (for [factor1 (range start stop)
