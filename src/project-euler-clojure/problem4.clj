@@ -15,9 +15,11 @@
       (* factor1 factor2))))
 
 (defn solution [start stop]
-  (apply max
-    (map #(Integer/parseInt %)
-      (filter palindrome?
-        (map str (product-range start stop))))))
+  (->>
+    (product-range start stop)
+    (map str)
+    (filter palindrome?)
+    (map #(Integer/parseInt %))
+    (apply max)))
 
 (solution 100 1000)
