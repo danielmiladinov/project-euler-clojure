@@ -9,9 +9,10 @@
   (= (str/reverse s) s))
 
 (defn product-range [start stop]
-  (for [factor1 (range start stop)
-        factor2 (range start stop)]
-    (* factor1 factor2)))
+  (let [factors (range start stop)]
+    (for [factor1 factors
+          factor2 factors]
+      (* factor1 factor2))))
 
 (defn solution [start stop]
   (apply max
