@@ -1,5 +1,5 @@
 (ns project-euler-clojure.problem4
-  (require '[clojure.string :as str]))
+  (:require [clojure.string :as str]))
 
 ; A palindromic number reads the same both ways. The largest palindrome made from the product
 ; of two 2-digit numbers is 9009 = 91 × 99.
